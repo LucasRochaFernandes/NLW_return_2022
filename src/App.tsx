@@ -2,7 +2,7 @@ import { useState } from "react";
  
 
 function App() {
-  return <h1 className="">Hello World</h1>;
+  return <button className="bg-violet-500 p-2">butão</button>;
 }
 
 export default App;
