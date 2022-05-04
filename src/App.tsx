@@ -1,8 +1,5 @@
-import { useState } from "react";
- 
+import { Widget } from "./components/Widget";
 
-function App() {
-  return <button className="buttonExample">butão</button>;
+export function App() {
+  return <Widget />
 }
-
-export default App;
