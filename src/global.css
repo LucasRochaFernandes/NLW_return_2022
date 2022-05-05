@@ -6,3 +6,8 @@
 .buttonExample {
     @apply bg-violet-500 p-2 rounded text-violet-100 transition-colors hover:bg-violet-700;
 }
+
+
+body{
+    @apply bg-[#09090a] text-zinc-100; 
+}
