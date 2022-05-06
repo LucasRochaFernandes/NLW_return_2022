@@ -31,15 +31,15 @@ const feedBackTypes = {
 export function WidgetForm() {
   return (
     <div className="bg-zinc-900 p-9 relative rounded-2xl flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
-      <header>
+      <header className="-mb-2">
         <span className="text-xl leading-6">Deixe seu feedback</span>
         <CloseButton />
       </header>
 
-      <div className="flex py-8 gap-5 w-full">
+      <div className="flex py-7 gap-3 w-full">
         {Object.entries(feedBackTypes).map(([key, value]) => {
           return (
-            <button className="flex flex-col items-center px-2 gap-2 hover:bg-slate-700 transition-all">
+            <button className="bg-zinc-800 rounded-xl flex flex-1 w-24 flex-col items-center px-2 py-5 gap-3 hover:border-slate-400 transition-all border-2 border-transparent focus:border-slate-400" key={key}>
               <img src={value.image.source} alt={value.image.alt} />
               <span>{key}</span>
             </button>
@@ -47,7 +47,7 @@ export function WidgetForm() {
         })}
       </div>
 
-      <footer className="text-xs text-neutral-400">
+      <footer className="text-xs text-neutral-400 -mt-2">
         Feito com ♥ pela{" "}
         <a
           className="underline underline-offset-2"
