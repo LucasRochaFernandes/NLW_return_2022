@@ -1,14 +1,30 @@
 import { CloseButton } from "./CloseButton";
 
+import bugImageUrl from "../assets/bug.svg";
+import ideaImageUrl from "../assets/idea.svg";
+import thoughtImageUrl from "../assets/thought.svg";
+
 const feedBackTypes = {
   BUG: {
     title: "Problema",
+    image: {
+      source: bugImageUrl,
+      alt: "Imagem de um inseto",
+    },
   },
   IDEIA: {
     title: "Ideia",
+    image: {
+      source: ideaImageUrl,
+      alt: "Imagem de uma lâmpada",
+    },
   },
-  OTHER: {
+  OUTRO: {
     title: "Outro",
+    image: {
+      source: thoughtImageUrl,
+      alt: "Imagem de uma nuvem",
+    },
   },
 };
 
@@ -20,7 +36,16 @@ export function WidgetForm() {
         <CloseButton />
       </header>
 
-      <div className="flex py-8 gap-2 w-full"></div>
+      <div className="flex py-8 gap-5 w-full">
+        {Object.entries(feedBackTypes).map(([key, value]) => {
+          return (
+            <button className="flex flex-col items-center px-2 gap-2 hover:bg-slate-700 transition-all">
+              <img src={value.image.source} alt={value.image.alt} />
+              <span>{key}</span>
+            </button>
+          );
+        })}
+      </div>
 
       <footer className="text-xs text-neutral-400">
         Feito com ♥ pela{" "}
